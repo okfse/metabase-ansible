@@ -1,0 +1,13 @@
+##
+## This file is maintained by Ansible - CHANGES WILL BE OVERWRITTEN
+##
+server {
+  listen 80;
+  listen [::]:80;
+  server_name {{ domain }};
+  client_max_body_size 32M;
+  limit_req zone=one burst=10;
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+}

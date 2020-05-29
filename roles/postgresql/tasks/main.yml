@@ -1,0 +1,8 @@
+---
+# tasks file for postgresql
+
+#- include_tasks: install_pgdg  # postgresql from upstream
+- include_tasks: install_pg.yml  # postgresql from distribution
+- include_tasks: configure_pg.yml
+- include_tasks: create_db_user.yml
+- include_tasks: create_db.yml

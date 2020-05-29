@@ -1,0 +1,40 @@
+---
+
+- name: Create database for Metabase
+  postgresql_db:
+    name: metabase
+    login_host: 127.0.0.1
+    login_user: "{{ db_user }}"
+    login_password: "{{ db_pass }}"
+  become: yes
+  become_user: postgres
+
+- name: Create database for invoice data
+  postgresql_db:
+    name: data
+    login_host: 127.0.0.1
+    login_user: "{{ db_user }}"
+    login_password: "{{ db_pass }}"
+  become: yes
+  become_user: postgres
+
+- name: table for invoice data
+  postgresql_table:
+    name: leverantorsreskontra
+    db: data
+    login_host: 127.0.0.1
+    login_user: "{{ db_user }}"
+    login_password: "{{ db_pass }}"
+    columns:
+    - kopare bigint
+    - faktura_nr text
+    - leverantor text
+    - leverantor_id text
+    - forvaltning text
+    - konto_nr bigint
+    - konto_text text
+    - belopp double precision
+    - datum bigint
+    - grund text
+    - avtal text
+    - kommun_id bigint
