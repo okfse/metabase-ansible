@@ -34,7 +34,20 @@
     - konto_nr bigint
     - konto_text text
     - belopp double precision
-    - datum bigint
+    - datum date
     - grund text
     - avtal text
     - kommun_id bigint
+    - kopare_text text
+    - valuta text
+    - ansvar_kod text
+    - projekt_kod text
+    - aktivitet_kod text
+    - verksamhet_kod text
+    - objekt_kod text
+    - ansvar_text text
+    - projekt_text text
+    - aktivitet_text text
+    - verksamhet_text text
+    - objekt_text text
+    - unik boolean
