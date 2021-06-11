@@ -1,22 +1,22 @@
 ---
-# tasks file for decidim
+# tasks file for metabase
 
 - name: Create the metabase container
   docker_container:
     name: metabase
     image: metabase/metabase
     restart: yes
-    ports:
-     - "3000:3000"
-    #network_mode: host
-    #etc_hosts: >
-    #  {
-    #    "docker.for.localhost": "172.17.0.1"
-    #  }
+    # ports:
+    #   - "3000:3000"
+    network_mode: host 
+    etc_hosts: >
+      {
+        "docker.for.localhost": "172.17.0.1"
+      }
     env:
-#      MB_DB_TYPE: postgres
-#      MB_DB_DBNAME: metabase
-#      MB_DB_PORT: "5432"
-#      MB_DB_USER: metabase
-#      MB_DB_PASS: metabase
-#      MB_DB_HOST: localhost
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: "5432"
+      MB_DB_USER: metabase
+      MB_DB_PASS: metabase
+      MB_DB_HOST: localhost
