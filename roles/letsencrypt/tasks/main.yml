@@ -1,12 +1,8 @@
 ---
 
-- name: add letsencrypt (certbot) package repo
-  apt_repository:
-    repo: ppa:certbot/certbot # comment out for 20.04
-
 - name: install certbot package
   apt:
-    pkg: python-certbot-nginx # python3-certbot-nginx for 20.04
+    pkg: python3-certbot-nginx
     update_cache: yes
 
 - name: Check if certificate already exists.

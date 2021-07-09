@@ -6,9 +6,10 @@
     name: metabase
     image: metabase/metabase
     restart: yes
+    pull: yes
     # ports:
     #   - "3000:3000"
-    network_mode: host 
+    network_mode: host
     etc_hosts: >
       {
         "docker.for.localhost": "172.17.0.1"
